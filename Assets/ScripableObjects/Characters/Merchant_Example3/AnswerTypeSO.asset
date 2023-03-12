@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504e222eed4e4fd4e87478d1f9f88b3a, type: 3}
+  m_Name: AnswerTypeSO
+  m_EditorClassIdentifier: 
+  answerData:
+  - type: 0
+    cost: {fileID: 11400000, guid: 07c84808b83afe4489da92a5ce5a4eb5, type: 2}
+    effect: {fileID: 11400000, guid: 75e7515fec3b5fd46ba6e824abf9cbf7, type: 2}
+    effectValue: {fileID: 11400000, guid: dc4f8709972969b45aee37c98db6dba0, type: 2}
+  - type: 1
+    cost: {fileID: 11400000, guid: 42cc5a0ff98eb5149bdbcf968b5441b5, type: 2}
+    effect: {fileID: 11400000, guid: 4dea6c9eb103e224e8d8f727768f1ff3, type: 2}
+    effectValue: {fileID: 11400000, guid: 42cc5a0ff98eb5149bdbcf968b5441b5, type: 2}
+  - type: 2
+    cost: {fileID: 11400000, guid: 42cc5a0ff98eb5149bdbcf968b5441b5, type: 2}
+    effect: {fileID: 11400000, guid: 029469e0ed220284586683602642de51, type: 2}
+    effectValue: {fileID: 11400000, guid: 42cc5a0ff98eb5149bdbcf968b5441b5, type: 2}

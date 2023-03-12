@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802c5bd7ad193c844831f97e3204aba5, type: 3}
+  m_Name: NodeDataHolder
+  m_EditorClassIdentifier: 
+  typeSprite: {fileID: 21300000, guid: 383a50005aa354a4da42e42042bd1d35, type: 3}
+  creatureName: {fileID: 11400000, guid: 833ef04689decb748bd50258b46feba7, type: 2}
+  infoText: {fileID: 11400000, guid: a14dc8e2e77dc85418060a6b0648f06a, type: 2}
+  answers: {fileID: 11400000, guid: e7632b4072aa7e0488734e8a3b09ba59, type: 2}
