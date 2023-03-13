@@ -31,25 +31,20 @@ namespace YinYangCase.Editor.Nodes
             DestroyImmediate(previewNode);
         }
 
-// Prefabların tutulduğu klasörün referansı
         private DefaultAsset prefabFolder;
 
-// Prefabların listesi
         private SerializedObject prefabList;
         private SerializedProperty prefabArray;
 
-// Prefab listesi penceresinin scroll pozisyonu
         private Vector2 scrollPos;
 
         void OnGUI()
         {
             GUILayout.Label("Node Settings", EditorStyles.boldLabel);
 
-            // Prefab listesini seçmek için bir klasör seçici oluşturun
             prefabFolder =
                 EditorGUILayout.ObjectField("Prefab Folder", prefabFolder, typeof(DefaultAsset), false) as DefaultAsset;
 
-            // Eğer bir klasör seçilmişse prefab listesini yükle
             if (prefabFolder != null)
             {
                 string path = AssetDatabase.GetAssetPath(prefabFolder);
@@ -61,10 +56,8 @@ namespace YinYangCase.Editor.Nodes
                     prefabs[i] = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
                 }
 
-                // Prefab listesini göstermek için bir ScrollView oluşturun
                 scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
                 {
-                    // Her prefab için bir düğme oluşturun
                     for (int i = 0; i < prefabs.Length; i++)
                     {
                         GameObject prefab = prefabs[i];
@@ -72,14 +65,12 @@ namespace YinYangCase.Editor.Nodes
 
                         EditorGUILayout.BeginHorizontal();
                         {
-                            // Prefab'ın önizlemesini gösteren bir ObjectField oluşturun
                             GameObject newPrefab = EditorGUILayout.ObjectField(
                                 new GUIContent(prefab.name, AssetPreview.GetAssetPreview(prefab)),
                                 prefab, typeof(GameObject), false) as GameObject;
 
                             if (newPrefab != prefab)
                             {
-                                // Eğer prefab değiştiyse, previewNode'u yok et
                                 if (previewNode != null)
                                 {
                                     DestroyImmediate(previewNode);
