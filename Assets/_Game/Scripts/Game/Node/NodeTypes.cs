@@ -36,7 +36,7 @@ namespace YinYangCase.Game.Nodes
         private void InitVariables()
         {
             _collider.enabled = true;
-            if(gameObject.layer == 6) _particle.Play();
+            if (gameObject.layer == 6) _particle.Play();
         }
 
         private void CanvasInitializer()
@@ -98,6 +98,7 @@ namespace YinYangCase.Game.Nodes
             uIWorkspace.SetActive(true);
             uIWorkspace.transform.localScale = Vector3.zero;
             StartCoroutine(ScaleChanger(uIWorkspace.transform, comeOutDuration, Vector3.one));
+            gameObject.layer = LayerMask.NameToLayer("Default");
         }
 
         public void CanvasCloser()
@@ -105,56 +106,89 @@ namespace YinYangCase.Game.Nodes
             StartCoroutine(ScaleChanger(uIWorkspace.transform, comeOutDuration, Vector3.zero, true));
         }
 
-        IEnumerator ScaleChanger(Transform transform, float duration, Vector3 targetScale, bool isClose = false)
+        IEnumerator ScaleChanger(Transform transform, float duration, Vector3 targetScale, bool shouldHide = false)
         {
+            if (transform == null)
+            {
+                yield break;
+            }
+
             Vector3 originalScale = transform.localScale;
 
-            float time = 0f;
-            while (time < duration)
+            float elapsedTime = 0f;
+            while (elapsedTime < duration)
             {
-                time += Time.deltaTime;
-                float t = Mathf.Clamp01(time / duration);
+                elapsedTime += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsedTime / duration);
                 transform.localScale = Vector3.Lerp(originalScale, targetScale, t);
                 yield return null;
             }
 
-            if (isClose)
+            if (shouldHide)
             {
                 transform.gameObject.SetActive(false);
+
                 if (previousNode != null)
                 {
                     NodeTypes node = previousNode.GetComponent<NodeTypes>();
-                    foreach (GameObject go in node.neighborNodes)
+                    if (node != null && node.neighborNodes != null)
                     {
-                        go.layer = 0;
-                        go.transform.GetChild(1).GetComponent<ParticleSystem>().Stop();
+                        foreach (GameObject neighbor in node.neighborNodes)
+                        {
+                            neighbor.layer = LayerMask.NameToLayer("Default");
+                            ParticleSystem particleSystem = GetParticleSystem(neighbor);
+                            if (particleSystem != null)
+                            {
+                                particleSystem.Stop();
+                            }
+                        }
                     }
                 }
                 else
                 {
-                    gameObject.layer = 0;
-                    _particle.Stop();
+                    gameObject.layer = LayerMask.NameToLayer("Default");
+                    ParticleSystem particleSystem = GetParticleSystem(gameObject);
+                    if (particleSystem != null)
+                    {
+                        particleSystem.Stop();
+                    }
                 }
-                
-                LayerChanger();
+
+                if (neighborNodes != null)
+                {
+                    foreach (GameObject neighbor in neighborNodes)
+                    {
+                        neighbor.layer = LayerMask.NameToLayer("Selectable");
+                        ParticleSystem particleSystem = GetParticleSystem(neighbor);
+                        if (particleSystem != null)
+                        {
+                            particleSystem.Play();
+                        }
+                    }
+                }
             }
         }
 
-        private void LayerChanger()
+        private ParticleSystem GetParticleSystem(GameObject obj)
         {
-            foreach (GameObject obj in neighborNodes)
+            if (obj != null)
             {
-                obj.layer = 6;
-                obj.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+                Transform childTransform = obj.transform.GetChild(1);
+                if (childTransform != null)
+                {
+                    return childTransform.GetComponent<ParticleSystem>();
+                }
             }
+
+            return null;
         }
 
 
         // This function is called in the editor when the script is loaded or a value is changed in the inspector.
         private void OnValidate()
         {
-            if(transform.GetComponentsInChildren<LineRenderer>().Length == neighborNodes.Length * 2) return;
-            
+            if (transform.GetComponentsInChildren<LineRenderer>().Length == neighborNodes.Length * 2) return;
+
             // Make sure that the neighbor nodes array is not null or empty.
             if (neighborNodes == null || neighborNodes.Length == 0)
             {

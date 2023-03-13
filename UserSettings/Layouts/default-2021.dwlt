@@ -73,7 +73,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: ProgramLayout
+  m_LastLoadedLayoutName: 
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 100}
   m_MaxSize: {x: 40480, y: 8096}
   vertical: 0
-  controlID: 172598
+  controlID: 40
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -194,8 +194,8 @@ MonoBehaviour:
     y: 0
     width: 288
     height: 939
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -246,8 +246,8 @@ MonoBehaviour:
     y: 0
     width: 280
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.02729477, y: 0.028799718, z: -0.0008245802, w: 0.999255}
     speed: 2
-    m_Value: {x: -0.02729477, y: -0.028799718, z: 0.0008245802, w: -0.999255}
+    m_Value: {x: 0.027293602, y: 0.028798485, z: -0.0008245449, w: 0.99921227}
   m_Size:
     m_Target: 6.897297
     speed: 2
@@ -730,7 +730,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e429d0ffee29d0ff342ad0ff3e2ad0ffb42ad0ffbe2ad0ff042bd0ff0e2bd0ff6c2bd0ff762bd0ffd42bd0ffde2bd0ff3c2cd0ff462cd0ffa42cd0ffae2cd0fff82cd0ff242dd0ff3c2dd0ffa82dd0ff40c4ddffd4bedeff2aa1e2fff611e3ff14f9e4ffbc6be5ffc86be5ffd26be5ffdc6be5ff026de5ff0e6de5ff186de5ff226de5ff806ee5ff8c6ee5ff966ee5ffa06ee5ffc66fe5ffd26fe5ffdc6fe5ffe66fe5ff0c71e5ff1871e5ff2271e5ff2c71e5ff5272e5ff5e72e5ff6872e5ff7272e5ffa673e5ffb273e5ffbc73e5ffc673e5ffec74e5fff874e5ff0275e5ff0c75e5ff6076e5ff6c76e5ff7676e5ff8076e5ff7eb6e5ff9661e6ffd6b3e6ffa28de7ff3647e9ff0efbfffff00201004e0301006c0301007e0301001e0c01001820010036200100
+      m_ExpandedIDs: 2cfbffff2efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -795,23 +795,21 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/GameDev_CaseAssets
+    m_Folders: []
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\incem\OneDrive\Belgeler\UnityLocalProjects\YinYangGames
-    Case
+  m_LastProjectPath: C:\Users\incem\OneDrive\Belgeler\GitHub\CasualCaseProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: e25b0000
     m_LastClickedID: 23522
-    m_ExpandedIDs: ffffffff00000000bc680000c0680000c2680000c4680000c6680000c8680000ca680000cc680000ce680000d0680000d2680000d4680000d6680000de680000e0680000e2680000e4680000e6680000e8680000ea680000ec680000f0680000f2680000f4680000f668000046690000c8be0000ccbe000034c2000084c2000088c2000096c2000082d60000f8d9000090e6000092e60000aae60000dae60000dee6000004e70000720c0100aa0c0100c20c0100fa0c0100120d01004a0d01005e0d0100620d0100660d0100700d0100740d0100820d01009c0d0100a60d01002a1101002e110100441101005211010056110100
+    m_ExpandedIDs: 00000000ea6f0000ec6f0000ee6f0000f06f0000f26f0000f46f0000f66f0000f86f0000fa6f0000fc6f0000fe6f000000700000027000000470000006700000087000000a7000000c7000000e70000010700000127000001470000016700000187000001a7000001c7000001e70000020700000227000002470000026700000287000002a7000002c7000002e70000030700000327000003470000036700000387000003a7000003c7000003e70000040700000427000004470000046700000487000004a7000004c7000004e7000005070000052700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -839,7 +837,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000bc680000c2680000c4680000c6680000c8680000ce680000d0680000d2680000d4680000d6680000de680000e0680000e2680000e6680000e8680000ea680000ec680000f0680000f2680000f4680000f6680000ccbe000034c2000084c2000088c2000096c2000082d60000f8d9000090e6000092e60000aae60000dae60000dee6000004e70000720c0100aa0c0100c20c0100fa0c0100120d01004a0d01005e0d0100620d0100660d0100700d0100740d0100820d01009c0d0100a60d01002a1101002e110100441101005211010056110100
+    m_ExpandedIDs: ffffffff00000000ea6f0000ec6f0000ee6f0000f06f0000f26f0000f46f0000f66f0000f86f0000fa6f0000fc6f0000fe6f00000070000002700000087000000a7000000c7000000e70000010700000127000001470000016700000187000001a7000001c7000001e70000020700000227000002470000026700000287000002a7000002c7000002e70000030700000327000003470000036700000387000003a7000003c7000003e70000040700000427000004470000046700000487000004a7000004c7000004e700000507000005270000084700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
